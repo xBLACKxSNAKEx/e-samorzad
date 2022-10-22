@@ -12,6 +12,7 @@ const setAddress = () => {
             changePanel('find-close');
             document.getElementById('address').value = addr;
             document.getElementById('type').value = type;
+            document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b>\nadress e-mail: <b>${authorities[ind].get('mail')}</b>`;
             return 0;
         }
     }
@@ -52,7 +53,7 @@ let changePanel = (mode) => {
     }
 
     if (mode == 'find-close') {
-        panel.innerHTML = `<span id="return"><i class="fa-solid fa-arrow-left-long"></i>Wróć do poprzedniej karty</span><div class="address-wrapper"><label class="first" for="address">Wybierz miejscowość:</label><br><select id="address" name="address">${fillValues(addresses)}</select><br><label for="type">Wybierz typ instytucji:</label><br><select id="type" name="type">${fillValues(types)}</select><div id="find-institution">Szukaj</div></div><div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=${address}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{margin-top: 6vh; position:relative;text-align:right;height:60vh}</style><a href="https://www.embedgooglemap.net">google map for my website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:60vh;width:100%}</style></div></div>`;
+        panel.innerHTML = `<span id="return"><i class="fa-solid fa-arrow-left-long"></i>Wróć do poprzedniej karty</span><div class="address-wrapper"><label class="first" for="address">Wybierz miejscowość:</label><br><select id="address" name="address">${fillValues(addresses)}</select><br><label for="type">Wybierz typ instytucji:</label><br><select id="type" name="type">${fillValues(types)}</select><div id="find-institution">Szukaj</div><p id="response"></p></div><div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=${address}&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{margin-top: 6vh; position:relative;text-align:right;height:60vh}</style><a href="https://www.embedgooglemap.net">google map for my website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:60vh;width:100%}</style></div></div>`;
 
         document.getElementById('return').addEventListener('click', () => { goBack('main') });
         document.getElementById('find-institution').addEventListener('click', () => { setAddress() });
