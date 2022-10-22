@@ -1,0 +1,374 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../img/office.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+* {
+    font-family: Lato, sans-serif;
+    transition: all .3s, width 0, height 0;
+}
+
+.baner {
+    height: 12vh;
+    background-color: rgba(185, 185, 185, 0.675);
+    border-bottom: .4vh solid rgba(159, 159, 159, 0.675);
+    padding: 1vh;
+    display: flex;
+
+}
+
+.baner-title {
+    font-size: 8vh;
+    font-family: Lato, sans-serif;
+    font-weight: 700;
+    margin-left: auto;
+    margin-right: 13vw;
+    margin-top: 1.3vh;
+    color: rgb(27, 27, 27);
+}
+
+.godlo {
+    height: 97%;
+    width: 10vw;
+    background-image: url(../img/godlo.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#panel {
+    min-height: 75vh;
+    background-color: rgba(255, 255, 255, .9);
+    width: 65vw;
+    margin-left: 10vw;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}
+
+#return {
+    position: absolute;
+    top: 2vh;
+    left: 2vw;
+    font-weight: 700;
+
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#return i {
+    color: rgb(0, 129, 194);
+    margin-right: .5vw;
+}
+
+#return:hover i {
+    color: rgb(3, 165, 245);
+    margin-right: .7vw;
+    transform: scale(1.3);
+}
+
+#return:hover {
+    transform: scale(1.1);
+    color: rgba(0, 0, 0, 0.285);
+
+}
+
+.panel-button {
+    height: 30vh;
+    width: 30vh;
+    border-radius: 2%;
+    background-color: rgb(0, 129, 194);
+    margin-top: 20vh;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20vh;
+    transition: all .3s;
+    position: relative;
+    cursor: pointer;
+    box-shadow: .3vh .3vh .3vh rgba(73, 73, 73, 0.292);
+}
+
+#panel-file-input {
+    position: absolute;
+    height: 30vh;
+    width: 30vh;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.panel-label {
+    font-size: 3vh;
+    position: absolute;
+    bottom: -10vh;
+    color: #000;
+    cursor: pointer;
+    transition: none;
+    transition: rotate .3s;
+    text-align: center;
+}
+
+#text-editor {
+    margin-left: 1vw;
+    margin-top: 6vh;
+    padding: 2vh 1vw;
+    height: 60vh;
+    width: 35vw;
+    overflow-y: scroll;
+    resize: none;
+    box-sizing: border-box;
+    font-size: 2vh;
+    line-height: 3vh;
+}
+
+.text-editor-panel {
+    height: 70vh;
+    width: 20vw;
+    margin-top: 2vh;
+    font-size: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-editor-panel * {
+    margin-top: 1vh;
+}
+
+#receiver-email,
+#sender-email{
+    margin-top: .2vh;
+    font-size: 2vh;
+    border-radius: .4vw;
+    padding: 0.6vh;
+}
+
+#send-mail-submit {
+    background-color: rgb(0, 129, 194);
+    color: white;
+    padding: 1vh;
+    font-weight: 700;
+    font-size: 3vh;
+    border-radius: 1vw;
+    margin-top: 2vh;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+#send-mail-submit:hover {
+    transform: scale(1.1);
+    background-color: rgb(52, 187, 255);
+}
+
+#find-institution {
+    margin-top: 5vh;
+    width: 20vw;
+    height: 5vh;
+    background-color: #0081C2;
+    color: white;
+    text-align: center;
+    padding: .2vh;
+    transition: all .2s;
+}
+
+#find-institution:hover {
+    transform: scale(1.1);
+    background-color: #3eb1eb;
+
+}
+
+.address-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.address-wrapper * {
+    border-radius: .6vh;
+    font-size: 3vh;
+    margin-top: 1.5vh;
+    cursor: pointer;
+}
+
+@media only screen and (min-width: 600px) {
+
+
+    .panel-button:hover .panel-label {
+        position: absolute;
+        bottom: -10vh;
+        color: #000;
+
+        rotate: -2deg;
+    }
+
+    .panel-button:active .panel-label {
+        font-size: 3vh;
+        position: absolute;
+        bottom: -10vh;
+        color: #000;
+
+        transform: scale(1) rotate(-2deg) translate(1vw, -1vh);
+    }
+
+    .panel-button:hover {
+        opacity: .8;
+        transform: scale(1.1) rotate(2deg);
+    }
+
+    .panel-button:active {
+        opacity: .8;
+        transform: scale(1.2) rotate(2deg);
+        background-color: rgb(161, 228, 255);
+    }
+
+    #word {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30vw;
+    }
+
+    #word span {
+        padding: 1.3vh;
+        padding-left: 1.5vw;
+        padding-right: 3vw;
+        background-color: rgb(193, 230, 255);
+        font-size: 5.2vh;
+        border-top-right-radius: .8vw;
+        border-bottom-right-radius: .8vw;
+        box-shadow: .3vh .3vh .3vh rgba(73, 73, 73, 0.292);
+        font-weight: 700;
+    }
+
+    #word i {
+        color: white;
+        padding: 1vh;
+        padding-right: .6vw;
+        padding-left: .6vw;
+        line-height: 6.8vh;
+        font-size: 6.5vh;
+        background-color: #114EAD;
+        border-top-left-radius: .8vw;
+        border-bottom-left-radius: .8vw;
+        box-shadow: .3vh .3vh .3vh rgba(73, 73, 73, 0.292);
+    }
+    
+    .mapouter{
+        width: 35vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: #fff;
+        background-image: url('');
+        height: 8vh;
+    }
+
+    .baner {
+        flex-direction: row-reverse;
+        height: 8vh;
+    }
+  
+    .baner-title {
+        font-size: 4vh;
+        font-weight: 700;
+        margin-left: auto;
+        margin-right: 7vw;
+        margin-top: 1.3vh;
+        color: rgb(27, 27, 27);
+    }
+
+    .panel-button {
+        margin-top: 5vh;
+        height: 25vh;
+        width: 80vw;
+        font-size: 15vh;
+        justify-content: center;
+        padding: 2vw;
+    }
+
+    #panel-file-input {
+        height: 25vh;
+        width: 80vw;
+    }
+
+    #panel {
+        flex-direction: column;
+    }
+
+    .panel-label {
+        font-size: 3vh;
+        position: absolute;
+        right: -5vw;
+        color: #000;
+        cursor: pointer;
+        position: relative;
+        top: 0;
+        width: 40vw;
+    }
+
+    #text-editor {
+        height: 80vh;
+        width: 80vw;
+        font-size: 2vh;
+        line-height: 3vh;
+    }
+
+    #word {
+        margin-top: 8vh;
+        width: 80vw;
+    }
+
+    #word span {
+        padding: 1.3vh;
+        padding-left: 1.5vw;
+        padding-right: 3vw;
+        line-height: 5.05vh;
+        background-color: rgb(193, 230, 255);
+        font-size: 4vh;
+        border-top-right-radius: .8vw;
+        border-bottom-right-radius: .8vw;
+        box-shadow: .3vh .3vh .3vh rgba(73, 73, 73, 0.292);
+        margin:0;
+        font-weight: 700;
+    }
+
+    #word i {
+        color: white;
+        padding: 1.05vh;
+        padding-right: 2.5vw;
+        padding-left: 2.5vw;
+        line-height: 5.35vh;
+        font-size: 4vh;
+        background-color: #114EAD;
+        border-top-left-radius: .8vw;
+        border-bottom-left-radius: .8vw;
+        box-shadow: .3vh .3vh .3vh rgba(73, 73, 73, 0.292);
+        margin:0;
+    }
+
+    #send-mail {
+        width: 80vw;
+        justify-content: flex-start;
+    }
+
+    
+    #find-institution {
+        width: 80vw;
+    }
+    
+    .mapouter {
+        width: 80vw;
+    }
+
+    .address-wrapper label.first {
+        margin-top: 10vh;
+    }
+}
