@@ -1,7 +1,7 @@
 let fileName;
 let file;
 let address = 'Polska';
-let mail;
+let mail = '';
 
 const setAddress = () => {
     let addr = document.getElementById('address').value;
@@ -16,7 +16,7 @@ const setAddress = () => {
             document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b><br>adress e-mail: <b>${authorities[ind].get('mail')}</b>`;
             mail = authorities[ind].get('mail');
             document.getElementById('response').addEventListener('click', () => {
-                changePanel('text-editor');
+                changePanel('write-mail');
                 document.getElementById('receiver-email').value = mail;
             });
 
@@ -99,6 +99,7 @@ let changePanel = (mode) => {
         panel.innerHTML = '<span id="return"><i class="fa-solid fa-arrow-left-long"></i>Wróć do poprzedniej karty</span><textarea name="text-editor" id="text-editor" form="send-mail"></textarea><div class="text-editor-panel"><form id="send-mail" name="send-mail" method="post" action="send_mail.php" class="text-editor-panel"><label for="sender-email">Adres e-mail wysyłającego:</label><br><input type="email" name="sender-email" id="sender-email" required><br><label for="receiver-email">Adres e-mail instytucji:</label><br><input type="email" name="receiver-email" id="receiver-email" required><br><input id="send-mail-submit" type="submit" value="Wyślij"></form></div>';
 
         document.getElementById('return').addEventListener('click', () => { goBack('write-mail') });
+        document.getElementById('receiver-email').value = mail;
 
         const reader = new FileReader();
         reader.addEventListener('loadend', () => { alert(reader.result) });
@@ -108,6 +109,7 @@ let changePanel = (mode) => {
 
     if (mode == 'its-word') {
         panel.innerHTML = `<span id="return"><i class="fa-solid fa-arrow-left-long"></i>Wróć do poprzedniej karty</span><div id="word"><i class="fa-solid fa-file-word"></i><span>${fileName}</span></div><div class="text-editor-panel"><form id="send-mail" name="send-mail" method="post" action="send_mail.php" class="text-editor-panel" enctype="multipart/form-data"><label for="sender-email">Adres e-mail wysyłającego:</label><br><input type="email" name="sender-email" id="sender-email" required><br><label for="receiver-email">Adres e-mail instytucji:</label><br><input type="email" name="receiver-email" id="receiver-email" required><br><input id="send-mail-submit" type="submit" value="Wyślij"><input form="send-mail" type="file" id="file-input-is-word" name="file-input-is-word" hidden></form></div>`;
+        document.getElementById('receiver-email').value = mail;
 
         const dataTransfer = new DataTransfer();
         dataTransfer.items.add(file);
