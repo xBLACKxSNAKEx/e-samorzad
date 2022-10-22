@@ -1,18 +1,25 @@
 let fileName;
 let file;
 let address = 'Polska';
+let mail;
 
 const setAddress = () => {
     let addr = document.getElementById('address').value;
     let type = document.getElementById('type').value;
 
-    for ( let ind = 0; ind < authorities.length; ind++ ){
-        if (authorities[ind].get('address_id') == addr && authorities[ind].get('type_id') == type){
+    for (let ind = 0; ind < authorities.length; ind++) {
+        if (authorities[ind].get('address_id') == addr && authorities[ind].get('type_id') == type) {
             address = authorities[ind].get('geo');
             changePanel('find-close');
             document.getElementById('address').value = addr;
             document.getElementById('type').value = type;
             document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b><br>adress e-mail: <b>${authorities[ind].get('mail')}</b>`;
+            mail = authorities[ind].get('mail');
+            document.getElementById('response').addEventListener('click', () => {
+                changePanel('write-mail');
+                document.getElementById('receiver-email').value = mail;
+            });
+
             return 0;
         }
     }
