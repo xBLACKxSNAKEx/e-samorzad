@@ -197,8 +197,11 @@ body {
 }
 
 #response {
-    width: 80%;
-    font-size: 1vh;
+    max-width: 80%;
+    font-size: 2vh;
+}
+#response * {
+    font-size: 2vh;
 }
 
 @media only screen and (min-width: 600px) {

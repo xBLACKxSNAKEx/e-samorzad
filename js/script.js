@@ -12,7 +12,7 @@ const setAddress = () => {
             changePanel('find-close');
             document.getElementById('address').value = addr;
             document.getElementById('type').value = type;
-            document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b><br>>adress e-mail: <b>${authorities[ind].get('mail')}</b>`;
+            document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b><br>adress e-mail: <b>${authorities[ind].get('mail')}</b>`;
             return 0;
         }
     }
