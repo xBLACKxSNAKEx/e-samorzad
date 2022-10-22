@@ -16,15 +16,16 @@
     require "credentials.php";
     
     if (isset($_FILES["file-input-is-word"])) {
-      echo("File detected");
       $tmp_dir = dirname($_FILES['file-input-is-word']["tmp_name"], 1);
       $target_dir = "uploades/";
       $original_file = $target_dir . basename($_FILES['file-input-is-word']["name"]);
       $imageFileType = strtolower(pathinfo($original_file, PATHINFO_EXTENSION));
       $target_file = basename($_FILES['file-input-is-word']["tmp_name"], ".tmp") . "." . $imageFileType;
       $uploadOk = 1;
+
+      if(!file_exists($target_dir) && !is_dir($target_dir))
+        mkdir($target_dir);
       
-      echo basename("", ".$imageFileType");
       // Allow certain file formats
       if ($imageFileType != "doc" && $imageFileType != "docx" && $imageFileType != "pdf") {
         // not good file type
@@ -34,7 +35,6 @@
       // Check if $uploadOk is set to 0 by an error
       if ($uploadOk == 0) {
         // TODO: error uploading file
-        echo("Error uploading");
       } else {
         if (!move_uploaded_file($_FILES['file-input-is-word']["tmp_name"], $target_dir.$target_file)) {
           $uploadOk = 0;
