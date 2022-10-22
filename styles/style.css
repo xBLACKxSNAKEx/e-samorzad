@@ -199,6 +199,7 @@ body {
 #response {
     max-width: 80%;
     font-size: 2vh;
+    transition: all .3s;
 }
 
 #response * {
@@ -206,7 +207,7 @@ body {
 }
 
 #response:hover {
-    color: rgb(49, 49, 49);
+    color: rgb(126, 126, 126);
     transform: scale(1.1);
 }
 

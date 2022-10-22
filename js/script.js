@@ -16,7 +16,7 @@ const setAddress = () => {
             document.getElementById('response').innerHTML = `nazwa: <b>${authorities[ind].get('name')}</b><br>adress e-mail: <b>${authorities[ind].get('mail')}</b>`;
             mail = authorities[ind].get('mail');
             document.getElementById('response').addEventListener('click', () => {
-                changePanel('write-mail');
+                changePanel('text-editor');
                 document.getElementById('receiver-email').value = mail;
             });
 
